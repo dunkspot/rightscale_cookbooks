@@ -22,13 +22,11 @@ end
    export AWS_ACCESS_KEY_ID=node[:aws][:access_key_id] 
    export AWS_SECRET_ACCESS_KEY=node[:aws][:secret_access_key] 
    export AWS_CALLING_FORMAT=SUBDOMAIN
+   
+   s3cmd get node[:couchbase][:bucket]}:node[:couchbase][:package]}  /tmp/couchbase_files
     EOH
 end
- 
-execute "s3cmd" do
-  command "s3cmd get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
-   action :run
-end  
+
 
 execute "tar" do
   command  " -xzf /tmp/couchbase_files/#{node[:couchbase][:package]}"  
