@@ -27,7 +27,7 @@ end
 end
  
 execute "s3cmd" do
-  command " get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
+  command "get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
    action :run
 end  
 
