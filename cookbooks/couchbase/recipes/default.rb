@@ -13,9 +13,10 @@
  log "S3 tar package name is #{node[:couchbase][:package]}"
  log "package name is #{node[:couchbase][:appname]}"
  
-gem_package "s3sync" do
-  action :install
+r=gem_package "s3sync" do
+  action :nothing
 end
+r.run_action(:install)
  bash "set_Environment_variables" do
    user "root"
    code <<-EOH
