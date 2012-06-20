@@ -32,7 +32,5 @@ execute "tar" do
   command  " tar -xzf #{temp_dir}/#{node[:couchbase][:package]}"  
  end 
  
- dpkg_package "couchbase server" do
-    source "#{temp_dir}/#{node[:couchbase][:package]}/#{[:couchbase][:appname]}"
- end
+
 rightscale_marker:end
