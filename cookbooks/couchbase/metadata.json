@@ -1,56 +1,82 @@
 {
-  "long_description": "Description\n===========\n    This cookbooks downloads Couchbase server package from an Amazon S3 bucket ,installs and  configures it.\n    It contains recipes the  enable the server join a cluster , leave a cluster and add dns setup.\n\n\nRequirements\n============\n\n\nAttributes\n==========\n\nUsage\n=====\n\n",
   "attributes": {
+    "aws/access_key_id": {
+      "type": "string",
+      "required": "required",
+      "description": "Set Aws Access Key ID",
+      "recipes": [
+        "couchbase::default"
+      ],
+      "calculated": false,
+      "display_name": "Aws ACCESS KEY ID ",
+      "choice": [
+
+      ]
+    },
     "couchbase/package": {
+      "type": "string",
+      "required": "required",
+      "description": "S3 bucket contain couchbase server  package",
+      "recipes": [
+        "couchbase::default"
+      ],
       "calculated": false,
       "display_name": "Couchbase Server Package ",
-      "recipes": [
-        "couchbase::default"
-      ],
-      "type": "string",
       "choice": [
 
-      ],
-      "description": "S3 bucket contain couchbase server  package",
-      "required": "required"
+      ]
     },
     "couchbase/bucket": {
-      "calculated": false,
-      "display_name": "Couchbase Server  Package Bucket",
+      "type": "string",
+      "required": "required",
+      "description": "S3 bucket contain couchbase server  package",
       "recipes": [
         "couchbase::default"
       ],
-      "type": "string",
+      "calculated": false,
+      "display_name": "Couchbase Server  Package Bucket",
       "choice": [
 
+      ]
+    },
+    "aws/secret_access_key": {
+      "type": "string",
+      "required": "required",
+      "description": "Set Ass secret  access key",
+      "recipes": [
+        "couchbase::default"
       ],
-      "description": "S3 bucket contain couchbase server  package",
-      "required": "required"
+      "calculated": false,
+      "display_name": "AWS SECRET ACCESS KEY ",
+      "choice": [
+
+      ]
     }
-  },
-  "replacing": {
-  },
-  "providing": {
   },
   "conflicting": {
   },
-  "license": "All rights reserved",
+  "long_description": "Description\n===========\n    This cookbooks downloads Couchbase server package from an Amazon S3 bucket ,installs and  configures it.\n    It contains recipes the  enable the server join a cluster , leave a cluster and add dns setup.\n\n\nRequirements\n============\n\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "replacing": {
+  },
+  "maintainer": "Kepeh yoyo",
+  "version": "0.0.1",
   "recipes": {
     "couchbase::default": "Install couchbase server and sets up default attributes"
   },
-  "version": "0.0.1",
-  "dependencies": {
-  },
-  "name": "couchbase",
-  "maintainer_email": "ice_tkey@yahoo.com",
   "recommendations": {
   },
-  "maintainer": "Kepeh yoyo",
   "description": "Installs/Configures couchbase",
+  "providing": {
+  },
+  "license": "All rights reserved",
+  "maintainer_email": "ice_tkey@yahoo.com",
+  "groupings": {
+  },
+  "name": "couchbase",
   "suggestions": {
   },
   "platforms": {
   },
-  "groupings": {
+  "dependencies": {
   }
 }
