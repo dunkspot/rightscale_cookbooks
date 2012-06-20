@@ -20,14 +20,14 @@ end
 
  
 execute "s3cmd" do
-  command "s3cmd get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
+  command " get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
     environment ({ 'AWS_ACCESS_KEY_ID'  => node[:aws][:access_key_id] , 
     'AWS_SECRET_ACCESS_KEY' => node[:aws][:secret_access_key] ,
     'AWS_CALLING_FORMAT'  => 'SUBDOMAIN'})
 end  
 
 execute "tar" do
-  command  " tar -xzf /tmp/couchbase_files/#{node[:couchbase][:package]}"  
+  command  " -xzf /tmp/couchbase_files/#{node[:couchbase][:package]}"  
  end 
 
 
