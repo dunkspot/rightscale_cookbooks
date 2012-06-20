@@ -16,7 +16,7 @@
 gem_package "s3sync" do
   action :install
 end
- bash "set Environment variables" do
+ bash "set_Environment_variables" do
    user "root"
    cwd "/tmp"
    code <<-EOH
