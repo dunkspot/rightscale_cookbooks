@@ -12,7 +12,6 @@ rightscale_marker:begin
  log"S3 bucket is #{node[:couchbase][:bucket]}"
  log"S3 tar package name is #{node[:couchbase][:package]}"
  log"package name is #{node[:couchbase][:appname]}"
-  action :run
 r = gem_package "s3sync" do
   action :nothing
 end
