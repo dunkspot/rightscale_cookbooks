@@ -6,12 +6,13 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-rightscale_marker:begin
+rightscale_marker :begin
 
 
  log "S3 bucket is #{node[:couchbase][:bucket]}"
  log "S3 tar package name is #{node[:couchbase][:package]}"
  log "package name is #{node[:couchbase][:appname]}"
+ 
 gem_package "s3sync" do
   action :install
 end
@@ -26,4 +27,4 @@ execute "tar" do
  end 
 
 
-rightscale_marker:end
+rightscale_marker :end
