@@ -16,14 +16,19 @@
 gem_package "s3sync" do
   action :install
 end
- 
-
+ bash "set Environment variables" do
+   user "root"
+   cwd "/tmp"
+   code <<-EOH
+   export AWS_ACCESS_KEY_ID    = node[:aws][:access_key_id] , 
+   export AWS_SECRET_ACCESS_KEY = node[:aws][:secret_access_key] ,
+   export AWS_CALLING_FORMAT   = 'SUBDOMAIN'
+    EOH
+end
  
 execute "s3cmd" do
   command " get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
-    environment ({ 'AWS_ACCESS_KEY_ID'  => node[:aws][:access_key_id] , 
-    'AWS_SECRET_ACCESS_KEY' => node[:aws][:secret_access_key] ,
-    'AWS_CALLING_FORMAT'  => 'SUBDOMAIN'})
+   action :run
 end  
 
 execute "tar" do
