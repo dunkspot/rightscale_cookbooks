@@ -12,13 +12,12 @@ rightscale_marker:begin
  log "S3 bucket is #{node[:couchbase][:bucket]}"
  log "S3 tar package name is #{node[:couchbase][:package]}"
  log "package name is #{node[:couchbase][:appname]}"
-r = gem_package "s3sync" do
-  action :nothing
+gem_package "s3sync" do
+  action :install
 end
-r.run_action(:install)
  
 execute "s3cmd" do
-  command "s3cmd get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
+  command "get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
   action :run
 end
 
