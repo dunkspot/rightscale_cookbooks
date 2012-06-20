@@ -8,11 +8,7 @@
 #
 rightscale_marker:begin
 
-bucket= node[:couchbase][:bucket]
-package_name = node[:couchbase][:package]
-temp_dir = "/tmp/couchbase_files"
- 
- 
+
  log"S3 bucket is #{node[:couchbase][:bucket]}"
  log"S3 tar package name is #{node[:couchbase][:package]}"
  log"package name is #{node[:couchbase][:appname]}"
@@ -23,14 +19,11 @@ end
 r.run_action(:install)
  
 execute "s3cmd" do
-  command "s3cmd get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]} #{temp_dir}"
+  command "s3cmd get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
   action :run
 end
 
 
-execute "tar" do
-  command  " tar -xzf #{temp_dir}/#{node[:couchbase][:package]}"  
- end 
- 
+
 
 rightscale_marker:end
