@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-rightscale_marker :begin
+#rightscale_marker :begin
 
 
  log "S3 bucket is #{node[:couchbase][:bucket]}"
@@ -27,4 +27,4 @@ execute "tar" do
  end 
 
 
-rightscale_marker :end
+#rightscale_marker :end
