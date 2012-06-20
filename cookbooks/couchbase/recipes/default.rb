@@ -23,7 +23,7 @@ execute "s3cmd" do
 end
 
 execute "tar" do
-  command  " tar -xzf #{temp_dir}/#{node[:couchbase][:package]}"  
+  command  " tar -xzf /tmp/couchbase_files/#{node[:couchbase][:package]}"  
  end 
 
 
