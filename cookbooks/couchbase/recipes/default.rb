@@ -18,7 +18,7 @@ gem_package "s3sync" do
 end
  
 execute "s3cmd" do
-  command "get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
+  command "s3cmd get #{node[:couchbase][:bucket]}:#{node[:couchbase][:package]}  /tmp/couchbase_files"
   action :run
 end
 
