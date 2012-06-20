@@ -1,56 +1,56 @@
 {
-  "version": "0.0.1",
-  "platforms": {
-  },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
   "maintainer_email": "ice_tkey@yahoo.com",
-  "conflicting": {
-  },
-  "suggestions": {
-  },
-  "license": "All rights reserved",
-  "recommendations": {
-  },
-  "dependencies": {
-  },
-  "description": "Installs/Configures couchbase",
-  "name": "couchbase",
+  "version": "0.0.1",
   "groupings": {
   },
   "attributes": {
     "couchbase/bucket": {
-      "display_name": "Couchbase Server  Package Bucket",
+      "type": "string",
+      "recipes": [
+        "couchbase::default"
+      ],
+      "calculated": false,
       "choice": [
 
       ],
-      "calculated": false,
-      "description": "S3 bucket contain couchbase server  package",
       "required": "required",
-      "recipes": [
-        "couchbase::defualt"
-      ],
-      "type": "string"
+      "display_name": "Couchbase Server  Package Bucket",
+      "description": "S3 bucket contain couchbase server  package"
     },
     "couchbase/package": {
-      "display_name": "Couchbase Server Package ",
+      "type": "string",
+      "recipes": [
+        "couchbase::default"
+      ],
+      "calculated": false,
       "choice": [
 
       ],
-      "calculated": false,
-      "description": "S3 bucket contain couchbase server  package",
       "required": "required",
-      "recipes": [
-        "couchbase::defualt"
-      ],
-      "type": "string"
+      "display_name": "Couchbase Server Package ",
+      "description": "S3 bucket contain couchbase server  package"
     }
   },
   "replacing": {
   },
-  "providing": {
+  "suggestions": {
   },
-  "maintainer": "Kepeh yoyo",
+  "name": "couchbase",
+  "license": "All rights reserved",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
   "recipes": {
     "couchbase::default": "Install couchbase server and sets up default attributes"
-  }
+  },
+  "conflicting": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "Kepeh yoyo",
+  "providing": {
+  },
+  "platforms": {
+  },
+  "recommendations": {
+  },
+  "description": "Installs/Configures couchbase"
 }

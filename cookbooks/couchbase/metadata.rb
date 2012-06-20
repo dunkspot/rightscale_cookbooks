@@ -11,7 +11,7 @@ attribute "couchbase/bucket",
   :display_name => "Couchbase Server  Package Bucket",
   :description => "S3 bucket contain couchbase server  package",
   :required  => 'required',
-  :recipes => ["couchbase::defualt"]
+  :recipes => ["couchbase::default"]
 
 
 
@@ -19,4 +19,4 @@ attribute "couchbase/package",
   :display_name => "Couchbase Server Package ",
   :description => "S3 bucket contain couchbase server  package",
   :required => 'required',
-  :recipes => ["couchbase::defualt"]
+  :recipes => ["couchbase::default"]
