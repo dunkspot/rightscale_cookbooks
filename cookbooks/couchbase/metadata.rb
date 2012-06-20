@@ -20,3 +20,19 @@ attribute "couchbase/package",
   :description => "S3 bucket contain couchbase server  package",
   :required => 'required',
   :recipes => ["couchbase::default"]
+
+attribute "aws/secret_access_key",
+  :display_name => "AWS SECRET ACCESS KEY ",
+  :description => "Set Ass secret  access key",
+  :required => 'required',
+  :recipes => ["couchbase::default"]
+  
+  
+attribute "aws/access_key_id",
+  :display_name => "Aws ACCESS KEY ID ",
+  :description => "Set Aws Access Key ID",
+  :required => 'required',
+  :recipes => ["couchbase::default"]
+
+
+
