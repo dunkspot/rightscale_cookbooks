@@ -9,9 +9,9 @@
 rightscale_marker:begin
 
 
- log"S3 bucket is #{node[:couchbase][:bucket]}"
- log"S3 tar package name is #{node[:couchbase][:package]}"
- log"package name is #{node[:couchbase][:appname]}"
+ log "S3 bucket is #{node[:couchbase][:bucket]}"
+ log "S3 tar package name is #{node[:couchbase][:package]}"
+ log "package name is #{node[:couchbase][:appname]}"
 r = gem_package "s3sync" do
   action :nothing
 end
@@ -22,7 +22,9 @@ execute "s3cmd" do
   action :run
 end
 
-
+execute "tar" do
+  command  " tar -xzf #{temp_dir}/#{node[:couchbase][:package]}"  
+ end 
 
 
 rightscale_marker:end
