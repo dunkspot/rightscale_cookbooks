@@ -7,19 +7,11 @@
 # All rights reserved - Do Not Redistribute
 #
 #rightscale_marker :begin
-
-
  
 log "Downloading couchbase package from #{node[:couchbase][:package_url]}"
-  
- execute "wget" do
- cwd "/tmp"
-  command "#{node[:couchbase][:package_url]}"
-  
- end
-dpkg_package "couchabse_server" do
-  source "/tmp/#{node[:couchbase][:package]}"
+
+couchbase "install couchbase" 
      
-end
+
 
 #rightscale_marker :end

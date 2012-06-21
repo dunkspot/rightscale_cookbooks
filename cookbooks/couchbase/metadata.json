@@ -1,20 +1,43 @@
 {
-  "maintainer_email": "ice_tkey@yahoo.com",
-  "maintainer": "Kepeh yoyo",
-  "name": "couchbase",
-  "recipes": {
-    "couchbase::default": "Install couchbase server and sets up default attributes"
+  "version": "0.0.1",
+  "replacing": {
   },
   "dependencies": {
   },
   "license": "All rights reserved",
+  "providing": {
+  },
   "recommendations": {
   },
-  "replacing": {
+  "platforms": {
+  },
+  "maintainer": "Kepeh yoyo",
+  "recipes": {
+    "couchbase::join_cluster": "add a couchbase server to a cluster ",
+    "couchbase::default": "Install couchbase server and sets up default attributes"
+  },
+  "conflicting": {
   },
   "long_description": "Description\n===========\n    This cookbooks downloads Couchbase server package from an Amazon S3 bucket ,installs and  configures it.\n    It contains recipes the  enable the server join a cluster , leave a cluster and add dns setup.\n\n\nRequirements\n============\n\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "version": "0.0.1",
+  "suggestions": {
+  },
+  "groupings": {
+  },
+  "maintainer_email": "ice_tkey@yahoo.com",
   "attributes": {
+    "couchbase/cluster_address": {
+      "choice": [
+
+      ],
+      "recipes": [
+        "couchbase::join_cluster"
+      ],
+      "required": "optional",
+      "display_name": "Couchbase Server  Cluster  Adrress",
+      "description": "The password of the couchbase server user with admin privileges",
+      "calculated": false,
+      "type": "string"
+    },
     "couchbase/package": {
       "choice": [
 
@@ -22,11 +45,11 @@
       "recipes": [
         "couchbase::default"
       ],
-      "display_name": "Couchbase Server Package ",
-      "type": "string",
       "required": "required",
+      "display_name": "Couchbase Server Package ",
+      "description": "couchbase .deb server package to be installed",
       "calculated": false,
-      "description": "couchbase .deb server package to be installed"
+      "type": "string"
     },
     "couchbase/package_url": {
       "choice": [
@@ -35,22 +58,39 @@
       "recipes": [
         "couchbase::default"
       ],
-      "display_name": "Package Url",
-      "type": "string",
       "required": "required",
+      "display_name": "Package Url",
+      "description": "Http Url to download package from",
       "calculated": false,
-      "description": "Http Url to download package from"
+      "type": "string"
+    },
+    "couchbase/user": {
+      "choice": [
+
+      ],
+      "recipes": [
+        "couchbase::join_cluster"
+      ],
+      "required": "required",
+      "display_name": "Couchbase Server User",
+      "description": "couchbase  server user",
+      "calculated": false,
+      "type": "string"
+    },
+    "couchbase/password": {
+      "choice": [
+
+      ],
+      "recipes": [
+        "couchbase::join_cluster"
+      ],
+      "required": "required",
+      "display_name": "Couchbase Server  Password ",
+      "description": "The password of the couchbase server user with admin privileges",
+      "calculated": false,
+      "type": "string"
     }
   },
-  "suggestions": {
-  },
-  "platforms": {
-  },
-  "conflicting": {
-  },
-  "providing": {
-  },
-  "groupings": {
-  },
-  "description": "Installs/Configures couchbase"
+  "description": "Installs/Configures couchbase",
+  "name": "couchbase"
 }
