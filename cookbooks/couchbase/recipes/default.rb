@@ -10,13 +10,16 @@
 
 
  
-
+log "Downloading couchbase package from #{node[:couchbase][:package_url]}"
+  
  execute "wget" do
  cwd "/tmp"
   command "#{node[:couchbase][:package_url]}"
-  log "Downloading couchbase package from #{node[:couchbase][:package_url]}"
   
  end
-
+dpkg_package "couchabse_server" do
+  source "/tmp/#{node[:couchbase][:package]}"
+     
+end
 
 #rightscale_marker :end
