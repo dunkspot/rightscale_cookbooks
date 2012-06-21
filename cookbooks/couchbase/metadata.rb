@@ -26,7 +26,7 @@ attribute "couchbase/package",
 attribute "couchbase/user",
   :display_name => "Couchbase Server User",
   :description => "couchbase  server user",
-  :required => "required",
+  :required => 'required',
   :recipes => ["couchbase::join_cluster"]
 
 attribute "couchbase/password",
