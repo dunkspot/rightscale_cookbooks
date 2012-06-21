@@ -1,14 +1,19 @@
 {
+  "maintainer_email": "ice_tkey@yahoo.com",
+  "maintainer": "Kepeh yoyo",
+  "name": "couchbase",
   "recipes": {
     "couchbase::default": "Install couchbase server and sets up default attributes"
   },
-  "replacing": {
-  },
   "dependencies": {
   },
-  "platforms": {
+  "license": "All rights reserved",
+  "recommendations": {
   },
-  "maintainer_email": "ice_tkey@yahoo.com",
+  "replacing": {
+  },
+  "long_description": "Description\n===========\n    This cookbooks downloads Couchbase server package from an Amazon S3 bucket ,installs and  configures it.\n    It contains recipes the  enable the server join a cluster , leave a cluster and add dns setup.\n\n\nRequirements\n============\n\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "version": "0.0.1",
   "attributes": {
     "couchbase/package": {
       "choice": [
@@ -17,10 +22,10 @@
       "recipes": [
         "couchbase::default"
       ],
-      "type": "string",
-      "calculated": false,
       "display_name": "Couchbase Server Package ",
+      "type": "string",
       "required": "required",
+      "calculated": false,
       "description": "couchbase .deb server package to be installed"
     },
     "couchbase/package_url": {
@@ -30,27 +35,22 @@
       "recipes": [
         "couchbase::default"
       ],
-      "type": "string",
-      "calculated": false,
       "display_name": "Package Url",
+      "type": "string",
       "required": "required",
+      "calculated": false,
       "description": "Http Url to download package from"
     }
   },
   "suggestions": {
   },
-  "recommendations": {
-  },
-  "providing": {
+  "platforms": {
   },
   "conflicting": {
   },
-  "maintainer": "Kepeh yoyo",
-  "long_description": "Description\n===========\n    This cookbooks downloads Couchbase server package from an Amazon S3 bucket ,installs and  configures it.\n    It contains recipes the  enable the server join a cluster , leave a cluster and add dns setup.\n\n\nRequirements\n============\n\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "version": "0.0.1",
+  "providing": {
+  },
   "groupings": {
   },
-  "license": "All rights reserved",
-  "name": "couchbase",
   "description": "Installs/Configures couchbase"
 }
